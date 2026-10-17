@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Build Your Own Website</title>
+<style>
+:root{--accent:#7657e8}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f3f5fb;color:#202338}header{padding:25px 15px;text-align:center;background:linear-gradient(120deg,#7657e8,#348bd7);color:#fff}header h1{margin:0 0 8px}main{max-width:1200px;margin:20px auto;padding:0 14px;display:grid;grid-template-columns:minmax(300px,1fr) minmax(300px,1fr);gap:16px}.panel{background:#fff;padding:18px;border-radius:15px;box-shadow:0 3px 15px #0001}.full{grid-column:1/-1}h2{font-size:19px;margin:0 0 10px}.hint{font-size:13px;color:#687087;line-height:1.45}.section-title{margin:18px 0 8px;font-weight:bold;font-size:14px}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.pick{padding:11px;border:1px solid #d8dce8;border-radius:10px;background:white;cursor:pointer;text-align:left;color:#202338;min-height:60px}.pick.active{border:2px solid var(--accent);background:#f3efff}.pick small{display:block;color:#6c7286;margin-top:5px;font-size:11px}label{display:block;font-size:13px;font-weight:bold;margin:12px 0 6px}input,select{width:100%;padding:10px;border:1px solid #d5d9e5;border-radius:8px;font-size:14px}.colors{display:flex;gap:10px;flex-wrap:wrap}.swatch{width:31px;height:31px;border:2px solid white;outline:1px solid #bbb;border-radius:50%;cursor:pointer}.swatch.active{outline:3px solid #25283a}.preview{min-height:300px;padding:20px;border:1px solid #dfe3ed;border-radius:12px;overflow-wrap:anywhere}.preview img{max-width:100%;border-radius:10px}.preview .card{padding:14px;border:1px solid #ddd;border-radius:12px;margin:10px 0}.preview button{cursor:pointer}button.action{padding:10px 14px;border:0;border-radius:8px;background:var(--accent);color:white;cursor:pointer;margin-top:10px;font-weight:bold}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#171a2b;color:#e7eaff;padding:14px;border-radius:10px;max-height:280px;overflow:auto;font-size:12px;line-height:1.5}.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.gallery div{padding:15px;background:#e9eaff;border-radius:10px;text-align:center}.preview .pill{display:inline-block;padding:5px 9px;border-radius:20px;background:#eee8ff;margin:3px}.note{padding:10px;background:#fff8df;border-radius:8px;font-size:12px;color:#624d16;margin-top:10px}@media(max-width:760px){main{grid-template-columns:1fr}.full{grid-column:auto}}
+</style></head>
+<body><header><h1>🧩 Build Your Own Website</h1><p>Choose your building blocks, style your page, and see it come alive!</p></header>
+<main>
+<section class="panel">
+<h2>🧱 1. Build your page</h2><p class="hint">Select as many elements as you want. Click a selected block again to remove it.</p>
+<div class="section-title">Text & headings</div><div class="choices">
+<button class="pick active" data-id="title">🔠 Main heading<small>&lt;h1&gt;</small></button><button class="pick" data-id="subtitle">✨ Small heading<small>&lt;h2&gt;</small></button><button class="pick" data-id="paragraph">📝 Paragraph<small>&lt;p&gt;</small></button><button class="pick" data-id="quote">💬 Quote<small>&lt;blockquote&gt;</small></button><button class="pick" data-id="list">📋 Bullet list<small>&lt;ul&gt; &lt;li&gt;</small></button><button class="pick" data-id="numberlist">🔢 Numbered list<small>&lt;ol&gt; &lt;li&gt;</small></button>
+</div>
+<div class="section-title">Interactive & layout</div><div class="choices">
+<button class="pick active" data-id="button">🟣 Button<small>&lt;button&gt;</small></button><button class="pick" data-id="link">🔗 Link<small>&lt;a&gt;</small></button><button class="pick" data-id="card">🗂️ Info card<small>&lt;section&gt;</small></button><button class="pick" data-id="divider">➖ Divider<small>&lt;hr&gt;</small></button><button class="pick" data-id="badge">🏷️ Tag / badge<small>&lt;span&gt;</small></button><button class="pick" data-id="gallery">🖼️ Gallery layout<small>&lt;div&gt;</small></button>
+</div>
+<div class="section-title">Media & extras</div><div class="choices">
+<button class="pick" data-id="image">🌄 Image placeholder<small>&lt;img&gt;</small></button><button class="pick" data-id="emoji">😀 Emoji feature<small>Unicode</small></button><button class="pick" data-id="form">✉️ Contact form<small>&lt;form&gt;</small></button><button class="pick" data-id="profile">👤 Profile block<small>HTML layout</small></button><button class="pick" data-id="table">📊 Mini table<small>&lt;table&gt;</small></button><button class="pick" data-id="footer">🔻 Footer<small>&lt;footer&gt;</small></button>
+</div>
+<div class="section-title">🎨 2. Personalize it</div>
+<label for="titleText">Website title</label><input id="titleText" value="My Awesome Website" maxlength="80">
+<label for="subText">Subtitle / intro text</label><input id="subText" value="A little corner of the internet" maxlength="100">
+<label for="topic">Choose a theme</label><select id="topic"><option value="general">My personal website</option><option value="games">🎮 Games</option><option value="animals">🐼 Animals</option><option value="sports">⚽ Sports</option><option value="space">🚀 Space</option><option value="nature">🌿 Nature</option><option value="books">📚 Books</option><option value="music">🎵 Music</option><option value="food">🍕 Food</option></select>
+<label>Accent color</label><div class="colors"><button class="swatch active" data-color="#7657e8" style="background:#7657e8" aria-label="Purple"></button><button class="swatch" data-color="#2478d4" style="background:#2478d4" aria-label="Blue"></button><button class="swatch" data-color="#16845b" style="background:#16845b" aria-label="Green"></button><button class="swatch" data-color="#df397b" style="background:#df397b" aria-label="Pink"></button><button class="swatch" data-color="#e47722" style="background:#e47722" aria-label="Orange"></button><button class="swatch" data-color="#202338" style="background:#202338" aria-label="Dark"></button></div>
+<label for="bg">Page background</label><select id="bg"><option value="#ffffff">White</option><option value="#fff8e9">Warm cream</option><option value="#eef7ff">Sky blue</option><option value="#f3efff">Lavender</option><option value="#eaf7ef">Mint</option><option value="#202338">Dark night</option></select>
+<label for="layout">Page layout</label><select id="layout"><option value="left">Content aligned left</option><option value="center">Centered content</option></select>
+<button class="action" id="reset">Start over</button>
+</section>
+<section class="panel"><h2>✨ Live website preview</h2><p class="hint">Your design updates as you select elements. The button in your preview works!</p><div class="preview" id="preview"></div><p class="hint">Tip: try mixing headings, cards, a gallery, and a footer to create a full page.</p></section>
+<section class="panel full"><h2>💻 The code behind your website</h2><p class="hint">The activity displays example HTML generated from your choices. You can copy it and discuss the tags with the group.</p><pre id="code"></pre><button class="action" id="copy">Copy code</button> <span class="hint" id="msg" aria-live="polite"></span></section>
+</main>
+<script>
+const chosen=new Set(['title','button']);let accent='#7657e8';const $=id=>document.getElementById(id);
+function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+const labels={general:['🌟','Welcome to my website!','Made with imagination'],games:['🎮','Level up your fun!','Player one, let’s go'],animals:['🐼','Discover amazing animals','Explore the animal world'],sports:['⚽','Play. Practice. Win.','Teamwork makes it happen'],space:['🚀','Explore the universe','A little page among the stars'],nature:['🌿','Love our planet','Grow green ideas'],books:['📚','Open a book, find a world','Stories live here'],music:['🎵','Feel the rhythm','Music brings us together'],food:['🍕','A taste of something fun','Made for food lovers']};
+function render(){let title=esc($('titleText').value||'My Website'),sub=esc($('subText').value||''),bg=$('bg').value,dark=bg==='#202338',topic=$('topic').value,words=labels[topic];let p=$('preview');p.style.background=bg;p.style.color=dark?'white':'#202338';p.style.textAlign=$('layout').value;let out='';
+if(chosen.has('title'))out+=`<h1 style="color:${accent};margin-top:0">${title}</h1>`;
+if(chosen.has('subtitle'))out+=`<h2>${words[1]}</h2>`;
+if(chosen.has('paragraph'))out+=`<p>${sub}. ${words[2]}.</p>`;
+if(chosen.has('quote'))out+=`<blockquote style="border-left:4px solid ${accent};padding:8px 12px;margin:12px 0">“${words[1]}”</blockquote>`;
+if(chosen.has('list'))out+='<ul><li>Creative ideas</li><li>Learn something new</li><li>Share with friends</li></ul>';
+if(chosen.has('numberlist'))out+='<ol><li>Choose your idea</li><li>Build your page</li><li>Show it off</li></ol>';
+if(chosen.has('button'))out+=`<p><button onclick="alert('Nice work! Your button is interactive.')" style="background:${accent};color:white;border:0;border-radius:8px;padding:11px 16px">Click me!</button></p>`;
+if(chosen.has('link'))out+=`<p><a href="https://www.example.com" target="_blank" style="color:${accent}">Visit a website ↗</a></p>`;
+if(chosen.has('card'))out+=`<section class="card"><h3>${words[0]} About this page</h3><p>${words[2]}.</p></section>`;
+if(chosen.has('divider'))out+=`<hr style="border:0;border-top:2px solid ${accent};margin:18px 0">`;
+if(chosen.has('badge'))out+=`<p><span class="pill" style="background:${accent};color:white">NEW</span> <span class="pill">CREATIVE</span> <span class="pill">MY SITE</span></p>`;
+if(chosen.has('gallery'))out+=`<div class="gallery"><div>${words[0]}<br>Idea one</div><div>✨<br>Idea two</div><div>🌈<br>Idea three</div><div>⭐<br>Idea four</div></div>`;
+if(chosen.has('image'))out+='<div style="padding:24px;text-align:center;border:2px dashed #aaa;border-radius:10px;margin:10px 0">🌄<br>Image goes here<br><small>Add an image file later</small></div>';
+if(chosen.has('emoji'))out+=`<h2>${words[0]} ${words[0]} ${words[0]}</h2>`;
+if(chosen.has('form'))out+=`<form onsubmit="event.preventDefault();alert('Demo form! It does not send information yet.')" style="text-align:left"><label>Your name</label><input placeholder="Type your name"><label>Message</label><input placeholder="Write a message"><button style="background:${accent};color:white;border:0;border-radius:8px;padding:9px;margin-top:8px">Send (demo)</button></form>`;
+if(chosen.has('profile'))out+=`<section class="card"><div style="font-size:36px">👩‍💻</div><h3>Meet the creator</h3><p>A curious learner who loves making things.</p></section>`;
+if(chosen.has('table'))out+=`<table style="width:100%;border-collapse:collapse;text-align:left"><tr><th style="padding:8px;border:1px solid #aaa">Item</th><th style="padding:8px;border:1px solid #aaa">Rating</th></tr><tr><td style="padding:8px;border:1px solid #aaa">Creativity</td><td style="padding:8px;border:1px solid #aaa">★★★★★</td></tr><tr><td style="padding:8px;border:1px solid #aaa">Fun</td><td style="padding:8px;border:1px solid #aaa">★★★★★</td></tr></table>`;
+if(chosen.has('footer'))out+=`<footer style="border-top:1px solid #aaa;margin-top:20px;padding-top:12px;font-size:12px">© 2026 My Website • Made by me</footer>`;
+p.innerHTML=out||'<p class="hint">Select some building blocks to start.</p>';
+let code='<!-- Example HTML made from your choices -->\\n<div style="background:'+bg+'; color:'+(dark?'white':'#202338')+'; text-align:'+ $('layout').value+'">\\n';
+if(chosen.has('title'))code+=`  <h1 style="color:${accent}">${title}</h1>\\n`;
+if(chosen.has('subtitle'))code+=`  <h2>${words[1]}</h2>\\n`;
+if(chosen.has('paragraph'))code+=`  <p>${sub}. ${words[2]}.</p>\\n`;
+if(chosen.has('quote'))code+=`  <blockquote>“${words[1]}”</blockquote>\\n`;
+if(chosen.has('list'))code+='  <ul><li>Creative ideas</li><li>Learn something new</li><li>Share with friends</li></ul>\\n';
+if(chosen.has('numberlist'))code+='  <ol><li>Choose your idea</li><li>Build your page</li><li>Show it off</li></ol>\\n';
+if(chosen.has('button'))code+='  <button>Click me!</button>\\n';
+if(chosen.has('link'))code+='  <a href="https://www.example.com">Visit a website</a>\\n';
+if(chosen.has('card'))code+='  <section class="card"><h3>About this page</h3><p>...</p></section>\\n';
+if(chosen.has('divider'))code+='  <hr>\\n';if(chosen.has('badge'))code+='  <span class="badge">NEW</span>\\n';
+if(chosen.has('gallery'))code+='  <div class="gallery"> ... cards ... </div>\\n';
+if(chosen.has('image'))code+='  <img src="your-image.jpg" alt="Describe your image">\\n';
+if(chosen.has('emoji'))code+=`  <h2>${words[0]} ${words[0]} ${words[0]}</h2>\\n`;
+if(chosen.has('form'))code+='  <form><input placeholder="Your name"><input placeholder="Message"><button>Send</button></form>\\n';
+if(chosen.has('profile'))code+='  <section><h3>Meet the creator</h3><p>A curious learner...</p></section>\\n';
+if(chosen.has('table'))code+='  <table><tr><th>Item</th><th>Rating</th></tr><tr><td>Creativity</td><td>★★★★★</td></tr></table>\\n';
+if(chosen.has('footer'))code+='  <footer>© 2026 My Website</footer>\\n';
+$('code').textContent=code+'</div>';
+}
+document.querySelectorAll('.pick').forEach(b=>b.onclick=()=>{let id=b.dataset.id;if(chosen.has(id)){chosen.delete(id);b.classList.remove('active')}else{chosen.add(id);b.classList.add('active')}render()});
+document.querySelectorAll('.swatch').forEach(b=>b.onclick=()=>{accent=b.dataset.color;document.querySelectorAll('.swatch').forEach(x=>x.classList.toggle('active',x===b));render()});
+['titleText','subText','topic','bg','layout'].forEach(id=>$(id).addEventListener(id==='titleText'||id==='subText'?'input':'change',render));
+$('reset').onclick=()=>{chosen.clear();chosen.add('title');chosen.add('button');document.querySelectorAll('.pick').forEach(b=>b.classList.toggle('active',chosen.has(b.dataset.id)));$('titleText').value='My Awesome Website';$('subText').value='A little corner of the internet';$('topic').value='general';$('bg').value='#ffffff';$('layout').value='left';accent='#7657e8';document.querySelectorAll('.swatch').forEach(b=>b.classList.toggle('active',b.dataset.color===accent));render()};
+$('copy').onclick=async()=>{try{await navigator.clipboard.writeText($('code').textContent);$('msg').textContent='✓ Copied!'}catch(e){$('msg').textContent='Select the code above and copy it manually.'}};render();
+</script></body></html>
